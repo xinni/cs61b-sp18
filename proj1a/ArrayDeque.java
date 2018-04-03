@@ -8,6 +8,14 @@ public class ArrayDeque<T> {
         size = 1;
     }
 
+    public ArrayDeque(T[] inputItems) {
+        items = (T[]) new Object[inputItems.length];
+        for (int i = 0; i < inputItems.length; i++) {
+            items[i] = inputItems[i];
+        }
+        size = items.length;
+    }
+
     public ArrayDeque() {
         items = (T[]) new Object[100];
         size = 0;
