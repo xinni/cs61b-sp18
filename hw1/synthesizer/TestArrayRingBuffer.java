@@ -17,9 +17,25 @@ public class TestArrayRingBuffer {
         arb.dequeue();
         arb.enqueue(4.4);
         arb.enqueue(1.1);
+
         assertEquals(44.8, arb.dequeue());
         assertEquals(62.3, arb.peek());
         assertEquals(62.3, arb.dequeue());
+    }
+
+    @Test
+    public void testIterator() {
+        ArrayRingBuffer<Double> arb = new ArrayRingBuffer(5);
+        arb.enqueue(33.1);
+        arb.enqueue(44.8);
+        arb.enqueue(62.3);
+        arb.enqueue(-3.4);
+        arb.dequeue();
+        arb.enqueue(4.4);
+        arb.enqueue(1.1);
+        for (double x : arb) {
+            System.out.println(x);
+        }
     }
 
     /** Calls tests for ArrayRingBuffer. */

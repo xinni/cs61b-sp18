@@ -35,7 +35,6 @@ public class GuitarString {
             buffer.dequeue();
             buffer.enqueue(Math.random() - 0.5);
         }
-
     }
 
     /* Advance the simulation one time step by performing one iteration of
